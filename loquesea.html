@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Estilizado</title>
+<style>
+  .imagen-hover {
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .imagen-hover:hover {
+    transform: scale(1.05); /* hace que se "levante" */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* sombra más profunda */
+  }
+</style>
+
+<img src="https://upload.wikimedia.org/wikipedia/en/6/65/Arctic_Monkeys_-_AM.png" 
+     alt="Portada del álbum AM" 
+     class="imagen-hover">
+</html>

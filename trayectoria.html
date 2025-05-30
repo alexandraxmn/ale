@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diseño Responsivo sin JS</title>
+<style>
+  body {
+    font-family: sans-serif;
+margin: 0;
+background: #f0f0f0;
+text-align: center;
+}
+  header, nav, main {
+    padding: 1em;
+    text-align: center;
+  }
+
+  header {
+    background: #dc1d1d;
+    color: white;
+    justify-content: center;
+  }
+  nav {
+background: #c04848a8;
+padding: 1em;
+color: white;
+ }
+  nav ul {
+list-style: none;
+display: flex;
+gap: 1em;
+justify-content: center;
+padding: 0;
+ }
+  nav li {
+    margin: 0;
+  }
+  nav a {
+    display: block;
+    padding: 0.75em 1em;
+    color: white;
+    text-decoration: none;
+  }
+  nav a:hover, nav a:focus {
+    background: #94d2bd;
+    color: #005f73;
+  }
+
+  /* Menú para dispositivos móviles usando checkbox hack */
+  #menu-toggle {
+    display: none;
+  }
+  label[for="menu-toggle"] {
+    background: #0a9396;
+    color: white;
+    padding: 0.75em 1em;
+    display: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+      display: none;
+    }
+    label[for="menu-toggle"] {
+      display: block;
+    }
+    #menu-toggle:checked + nav ul {
+      display: flex;
+    }
+  }
+
+  main {
+    display: flex;
+justify-content: space-around;
+ padding: 2em;
+flex-wrap: wrap;
+ }
+
+  footer {
+background:#dc1d1d;
+color: white;
+text-align: center;
+padding: 1em;
+ }
+  .flecha {
+      position: fixed;
+      right: 20px;
+      padding: 10px 15px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .flecha:hover {
+      opacity: 1;
+    }
+    #flechaArriba {
+      bottom: 80px;
+    }
+    #flechaAbajo {
+      bottom: 20px;
+    }
+    .contenido {
+      height: 1500px; /* Simula mucho contenido para poder desplazarse */
+    }
+    button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .card-container {
+    display: flex;
+    gap: 20px; /* Espacio entre cards */
+    flex-wrap: wrap; /* Hace que bajen si no caben */
+  }
+        .card {
+background: white; padding: 1em;
+margin: 1em;
+border-radius: 8px;
+box-shadow: 0 0 100px rgba(0,0,0,0.1);
+width: 200px;
+text-align: center;
+ } 
+</style>
+</head>
+<body>
+
+<header>
+  <h1>One Direction</h1>
+</header>
+
+<label for="menu-toggle">☰ Menú</label>
+<input type="checkbox" id="menu-toggle" />
+
+<nav>
+  <ul>
+    <li><a href="Inicio.html">Acerca de</a></li>
+    <li><a href="Albumes.html">Álbumes</a></li>
+    <li><a href="miembros.html">Miembros</a></li>
+    <li><a href="trayectoria.html">Trayectoria</a></li>
+  </ul>
+</nav>
+
+<main>
+    <div class="contenido">
+    <h2>TRAYECTORIA MÚSICAL</h2>
+    <h1>Resumen de la trayectoria musical de One Direction</h1>
+    <div class="card-container">
+    <div class="card">
+  <h2> Inicios - 2010 </h2>
+  <p>One Direction se formó en 2010 durante la edición británica del programa The X Factor, cuando los cinco integrantes —Harry Styles, Niall Horan, Liam Payne, Louis Tomlinson y Zayn Malik—, originalmente concursantes individuales, fueron unidos como grupo por los jueces. Aunque no ganaron el concurso, firmaron un contrato con Syco Music y comenzaron una carrera que los llevaría a convertirse en uno de los fenómenos pop más importantes de la década.
+    <strong><em></em></strong> 
+    <em></em></p>
+  </div>
+<div class="card">
+  <h2> Entre 2011 y 2015</h2>
+  <p>
+   La banda lanzó cinco álbumes de estudio que lograron un éxito masivo a nivel mundial. Su primer disco, Up All Night, los catapultó a la fama con sencillos como “What Makes You Beautiful”. Posteriormente, álbumes como Take Me Home, Midnight Memories, Four y Made in the A.M. mostraron una evolución musical desde el pop adolescente hasta un sonido más maduro y variado. Durante esos años, realizaron giras mundiales con estadios llenos, batiendo récords de ventas y popularidad, además de acumular múltiples premios internacionales. <strong><em></em></strong>
+    <em></em> <strong><em></em></strong> 
+     <strong><em></em></strong> 
+  </p>
+</div>
+<div class="card">
+  <h2> En Marzo de 2015 <em></em> </h2>
+  <p>
+    Zayn Malik dejó el grupo para seguir una carrera en solitario, y el resto de la banda continuó como cuarteto hasta lanzar Made in the A.M. en noviembre de ese año. Sin embargo, en enero de 2016 anunciaron una pausa indefinida para que cada integrante pudiera desarrollar proyectos personales. Desde entonces, no han regresado oficialmente como grupo, aunque mantienen una base de fans muy activa y siguen siendo una influencia relevante en la música pop.<strong><em></em></strong> 
+    <em></em><em></em>  <em>
+    
+  </p>
+  </div>
+<div class="card">
+  <h2>Actualidad</h2>
+  <p>
+    Durante este período, los miembros han tenido carreras solistas con diversos grados de éxito. Harry Styles se ha destacado mundialmente como cantante y actor, ganando premios importantes y reconocimiento crítico. Niall Horan, Louis Tomlinson, Liam Payne y Zayn Malik también han lanzado música en solitario, explorando distintos estilos y colaboraciones. A pesar de la pausa, One Direction sigue siendo un ícono cultural, y su legado permanece vigente gracias a la pasión de sus seguidores y la influencia que tuvieron en la industria musical desde 2010 hasta la actualidad.<strong><em></em></strong>
+    <strong><em> </em></strong>
+  </p>
+  </div>
+
+  
+  
+  
+</main>
+<button class="flecha" id="flechaArriba" onclick="scrollToTop()">⬆️</button>
+  <button class="flecha" id="flechaAbajo" onclick="scrollToBottom()">⬇️</button>
+
+<script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function scrollToBottom() {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+<a href="miembros.html"><button>Anterior</button></a>
+    <a href="index.html"><button>Ir a Inicio</button></a>
+    <br><br>
+<footer>
+  <p>© 2025 Mi sitio web</p>
+</footer>
+
+
+</body>
+</html>

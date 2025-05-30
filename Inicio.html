@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diseño Responsivo sin JS</title>
+<style>
+  body {
+    font-family: sans-serif;
+margin: 0;
+background: #f0f0f0;
+text-align: center;
+}
+  header, nav, main {
+    padding: 1em;
+    text-align: center;
+  }
+
+  header {
+    background:#dc1d1d;
+    color: white;
+    justify-content: center;
+  }
+  nav {
+background:#c04848a8;
+padding: 1em;
+color: white;
+ }
+  nav ul {
+list-style: none;
+display: flex;
+gap: 1em;
+justify-content: center;
+padding: 0;
+ }
+  nav li {
+    margin: 0;
+  }
+  nav a {
+    display: block;
+    padding: 0.75em 1em;
+    color: white;
+    text-decoration: none;
+  }
+  nav a:hover, nav a:focus {
+    background: #94d2bd;
+    color: #005f73;
+  }
+
+  /* Menú para dispositivos móviles usando checkbox hack */
+  #menu-toggle {
+    display: none;
+  }
+  label[for="menu-toggle"] {
+    background: #0a9396;
+    color: white;
+    padding: 0.75em 1em;
+    display: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+      display: none;
+    }
+    label[for="menu-toggle"] {
+      display: block;
+    }
+    #menu-toggle:checked + nav ul {
+      display: flex;
+    }
+  }
+
+  main {
+    display: flex;
+justify-content: space-around;
+ padding: 2em;
+flex-wrap: wrap;
+ }
+
+  footer {
+background: #dc1d1d;
+color: white;
+text-align: center;
+padding: 1em;
+ }
+  .flecha {
+      position: fixed;
+      right: 20px;
+      padding: 10px 15px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .flecha:hover {
+      opacity: 1;
+    }
+    #flechaArriba {
+      bottom: 80px;
+    }
+    #flechaAbajo {
+      bottom: 20px;
+    }
+    .contenido {
+      height: 999px; /* Simula mucho contenido para poder desplazarse */
+    }
+    button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .collage img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .collage img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .imagen-hover {
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .imagen-hover:hover {
+    transform: scale(1.05); /* hace que se "levante" */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* sombra más profunda */
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>One Direction</h1>
+</header>
+
+<label for="menu-toggle">☰ Menú</label>
+<input type="checkbox" id="menu-toggle" />
+
+<nav>
+  <ul>
+    <li><a href="Inicio.html">Acerca de</a></li>
+    <li><a href="Albumes.html">Álbumes</a></li>
+    <li><a href="miembros.html">Miembros</a></li>
+    <li><a href="trayectoria.html">Trayectoria</a></li>
+  </ul>
+</nav>
+
+<main>
+  <article>
+    <div class="contenido">
+    <h2>ACERCA DE LA BANDA</h2>
+    <section style="max-width: 800px; margin: auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h2> ONE DIRECTION – Breve descripción</h2>
+  <p>
+    <strong>One Direction</strong> One Direction foi unha banda de pop formada  
+    <strong>en 2010 en Londres,</strong>durante o programa "The X Factor". Conformada por cinco integrantes
+    <em>Harry Styles, Niall Horan, Liam Payne, Louis Tomlinson y Zayn Malik.</em>   
+
+  </p>
+  <p>Cada uno de los cinco miembros audicionó y compitió inicialmente como solistas, pero al principio de la temporada se les aconsejó que unieran sus talentos. Adoptando el nombre de One Direction, los chicos —todos tenían entre 16 y 18 años en ese momento— atrajeron mucha atención, especialmente de las jóvenes televidentes, por su carismática presencia escénica y sus habilidades vocales. 
+   
+  </p>
+  <p>
+   La banda se convirtió en un fenómeno global, alcanzando gran éxito comercial y acumulando millones de discos vendidos y transmisiones en plataformas de streaming.  
+   
+  </p>
+</section>
+<div class="collage">
+  <img src="one8.webp" alt="Foto 1">
+  <img src="one9.webp" alt="Foto 2">
+  <img src="one10.jpg" alt="Foto 3">
+  <img src="one11.jpeg" alt="Foto 4">
+ <img src="one12.jpg" alt="Foto 5">
+</div>
+    </div>
+  </article>
+</main>
+<button class="flecha" id="flechaArriba" onclick="scrollToTop()">⬆️</button>
+  <button class="flecha" id="flechaAbajo" onclick="scrollToBottom()">⬇️</button>
+
+<script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function scrollToBottom() {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+<a href="Albumes.html"><button>Siguiente</button></a>
+    <a href="index.html"><button>Ir a Inicio</button></a>
+    <br><br>
+<footer>
+  <p>© 2025 Mi sitio web</p>
+</footer>
+
+
+</body>
+</html>

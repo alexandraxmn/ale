@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diseño Responsivo sin JS</title>
+<style>
+  body {
+    font-family: sans-serif;
+margin: 0;
+background: #f0f0f0;
+text-align: center;
+}
+  header, nav, main {
+    padding: 1em;
+    text-align: center;
+  }
+
+  header {
+    background: #dc1d1d;
+    color: white;
+    justify-content: center;
+  }
+  nav {
+background: #c04848a8;
+padding: 1em;
+color: white;
+ }
+  nav ul {
+list-style: none;
+display: flex;
+gap: 1em;
+justify-content: center;
+padding: 0;
+ }
+  nav li {
+    margin: 0;
+  }
+  nav a {
+    display: block;
+    padding: 0.75em 1em;
+    color: white;
+    text-decoration: none;
+  }
+  nav a:hover, nav a:focus {
+    background: #94d2bd;
+    color: #005f73;
+  }
+
+  /* Menú para dispositivos móviles usando checkbox hack */
+  #menu-toggle {
+    display: none;
+  }
+  label[for="menu-toggle"] {
+    background: #0a9396;
+    color: white;
+    padding: 0.75em 1em;
+    display: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+      display: none;
+    }
+    label[for="menu-toggle"] {
+      display: block;
+    }
+    #menu-toggle:checked + nav ul {
+      display: flex;
+    }
+  }
+
+  main {
+    display: flex;
+justify-content: space-around;
+ padding: 2em;
+flex-wrap: wrap;
+ }
+
+  footer {
+background: #dc1d1d;
+color: white;
+text-align: center;
+padding: 1em;
+ }
+  .flecha {
+      position: fixed;
+      right: 20px;
+      padding: 10px 15px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .flecha:hover {
+      opacity: 1;
+    }
+    #flechaArriba {
+      bottom: 80px;
+    }
+    #flechaAbajo {
+      bottom: 20px;
+    }
+    .contenido {
+      height: 1500px; /* Simula mucho contenido para poder desplazarse */
+    }
+    button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+          .album-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 250px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>One Direction</h1>
+</header>
+
+<label for="menu-toggle">☰ Menú</label>
+<input type="checkbox" id="menu-toggle" />
+
+<nav>
+  <ul>
+    <li><a href="Inicio.html">Acerca de</a></li>
+    <li><a href="Albumes.html">Álbumes</a></li>
+    <li><a href="miembros.html">Miembros</a></li>
+    <li><a href="trayectoria.html">Trayectoria</a></li>
+  </ul>
+</nav>
+
+<main>
+  <article>
+    <div class="contenido">
+    <h2>ÁLBUMES</h2>
+    <div class="album-container">
+  <div class="card">
+    <h3>Up All Night (2011)</h3>
+    <p>Álbum debut que lanzou a banda ao éxito mundial, con hits como "What Makes You Beautiful". Un pop enerxético e fresco.</p>
+    <img src="one 1.jpeg" alt="the car" width="250">
+  </div>
+  <div class="card">
+    <h3>Take Me Home (2012)</h3>
+    <p>Segue a liña pop, con cancións máis maduras pero igual de pegadizas, como "Live While We're Young".</p>
+    <img src="one 2.jpeg" alt="the car" width="250">
+  </div>
+  <div class="card">
+    <h3>Midnight Memories (2013)</h3>
+    <p>Un son máis rockeiro e maduro, con influencias de guitarra e temas sobre a vida e a fama.</p>
+    <img src="one 3.jpeg" alt="the car" width="250">
+  </div>
+  <div class="card">
+    <h3>Four (2014)</h3>
+    <p>Álbum máis reflexivo e pulido, con baladas e himnos pop como "Steal My Girl" e "Night Changes".</p>
+    <img src="one 4.jpeg" alt="the car" width="250">
+  </div>
+  <div class="card">
+    <h3>Made in the A.M. (2015)</h3>
+    <p>Último disco antes da pausa da banda, con cancións que exploran temas persoais e un son máis adulto.</p>
+    <img src="one 5.jpeg" alt="the car" width="250">
+  </div>
+  <div class="card">
+    <h3>No Control (Single de 2014)</h3>
+    <p>Un tema enérxico e emocional que destaca no cuarto álbum, mostrando un lado máis vulnerable da banda.</p>
+    <img src="one 6.jpg" alt="the car" width="250">
+  </div>
+  <div class="card">
+    <h3>Little Things (Single de 2012)</h3>
+    <p>Balada acústica e emotiva que mostra unha faceta máis íntima e suave de One Direction.</p>
+    <img src="one 7.png" alt="the car" width="250">
+  </div>
+</div>
+    </div>
+  </article>
+</main>
+<button class="flecha" id="flechaArriba" onclick="scrollToTop()">⬆️</button>
+  <button class="flecha" id="flechaAbajo" onclick="scrollToBottom()">⬇️</button>
+
+<script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function scrollToBottom() {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+  <a href="Inicio.html"><button>Anterior</button></a>
+    <a href="index.html"><button>Ir a Inicio</button></a>
+    <a href="miembros.html"><button>Siguiente</button></a>
+
+    <br><br>
+<footer>
+  <p>© 2025 Mi sitio web</p>
+</footer>
+
+
+</body>
+</html>

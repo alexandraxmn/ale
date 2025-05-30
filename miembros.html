@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diseño Responsivo sin JS</title>
+<style>
+  body {
+    font-family: sans-serif;
+margin: 0;
+background: #f0f0f0;
+text-align: center;
+}
+  header, nav, main {
+    padding: 1em;
+    text-align: center;
+  }
+
+  header {
+    background: #dc1d1d;
+    color: white;
+    justify-content: center;
+  }
+  nav {
+background: #c04848a8;
+padding: 1em;
+color: white;
+ }
+  nav ul {
+list-style: none;
+display: flex;
+gap: 1em;
+justify-content: center;
+padding: 0;
+ }
+  nav li {
+    margin: 0;
+  }
+  nav a {
+    display: block;
+    padding: 0.75em 1em;
+    color: white;
+    text-decoration: none;
+  }
+  nav a:hover, nav a:focus {
+    background: #94d2bd;
+    color: #005f73;
+  }
+
+  /* Menú para dispositivos móviles usando checkbox hack */
+  #menu-toggle {
+    display: none;
+  }
+  label[for="menu-toggle"] {
+    background: #0a9396;
+    color: white;
+    padding: 0.75em 1em;
+    display: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+      display: none;
+    }
+    label[for="menu-toggle"] {
+      display: block;
+    }
+    #menu-toggle:checked + nav ul {
+      display: flex;
+    }
+  }
+
+  main {
+    display: flex;
+justify-content: space-around;
+ padding: 2em;
+flex-wrap: wrap;
+ }
+
+  footer {
+background: #dc1d1d;
+color: white;
+text-align: center;
+padding: 1em;
+ }
+  .flecha {
+      position: fixed;
+      right: 20px;
+      padding: 10px 15px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .flecha:hover {
+      opacity: 1;
+    }
+    #flechaArriba {
+      bottom: 80px;
+    }
+    #flechaAbajo {
+      bottom: 20px;
+    }
+    .contenido {
+      height: 1500px; /* Simula mucho contenido para poder desplazarse */
+    }
+    button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .card-container {
+    display: flex;
+    gap: 20px; /* Espacio entre cards */
+    flex-wrap: wrap; /* Hace que bajen si no caben */
+  }
+        .card {
+background: white; padding: 1em;
+margin: 1em;
+border-radius: 8px;
+box-shadow: 0 0 100px rgba(0,0,0,0.1);
+width: 200px;
+text-align: center;
+ } 
+</style>
+</head>
+<body>
+
+<header>
+  <h1>One Direction</h1>
+</header>
+
+<label for="menu-toggle">☰ Menú</label>
+<input type="checkbox" id="menu-toggle" />
+
+<nav>
+  <ul>
+    <li><a href="Inicio.html">Acerca de</a></li>
+    <li><a href="Albumes.html">Álbumes</a></li>
+    <li><a href="miembros.html">Miembros</a></li>
+    <li><a href="trayectoria.html">Trayectoria</a></li>
+  </ul>
+</nav>
+
+<main>
+  <article>
+    <div class="contenido">
+    <h2>Miembros de ONE DIRECTION</h2>
+    <div class="card-container">
+<div class="card">
+  <div class="miembro">
+    <h3>Harry Styles </h3>
+    <p>
+      fue una de las voces principales de One Direction, reconocido por su tono cálido, su carisma natural y su habilidad para conectar con el público en el escenario. Dentro del grupo, solía encargarse de partes melódicas importantes y destacar en los estribillos. Su presencia escénica, estilo único y actitud desenfadada ayudaron a definir la imagen moderna y fresca de la banda. </em>. 
+     
+    </p>
+     <img src="ONE1.jpg" alt="the car" width="200">
+  </div>
+  </div>
+<div class="card">
+  <div class="miembro">
+    <h3> Zayn Malik </h3>
+    <p>
+      aportó una de las voces más poderosas y técnicas del grupo, destacándose por sus agudos, falsetes y giros vocales que le daban profundidad emocional a muchas canciones. En la banda, era habitual que se le asignaran las partes vocales más exigentes. Su salida en 2015 marcó un cambio importante en la dinámica de One Direction, ya que su talento vocal era clave en la armonía del grupo.
+    </p>
+     <img src="ONE2.jpeg" alt="the car" width="200">
+  </div>
+  </div>
+<div class="card">
+  <div class="miembro">
+    <h3>Niall Horan </h3>
+    <p>
+      fue el miembro que más contribuyó al sonido acústico de la banda, ya que a menudo tocaba la guitarra en presentaciones en vivo. Aunque no siempre era el centro vocal, su voz suave y melódica ayudaba a equilibrar las armonías del grupo. También se destacó por su energía positiva, su cercanía con los fans y su actitud relajada, que aportaban un ambiente ameno dentro del grupo.
+    </p>
+     <img src="ONE3.jpg" alt="the car" width="200">
+  </div>
+  </div>
+<div class="card">
+  <div class="miembro">
+    <h3> Liam Payne </h3>
+    <p>
+       tuvo un rol vocal central en la banda, siendo uno de los que más compartía las partes principales junto a Harry y Zayn. Su voz firme y versátil permitía transiciones suaves entre los diferentes estilos de las canciones. Además, muchas veces actuaba como líder en entrevistas y eventos, demostrando un carácter organizado y protector hacia el grupo.
+    </p>
+     <img src="ONE4.webp" alt="the car" width="200">    
+  </div>
+</div>
+  <div class="card">
+  <div class="miembro">
+    <h3> Louis Tomlinson </h3>
+    <p>
+        desempeñó un papel importante en la armonía vocal del grupo, con una voz aguda que aportaba contraste y textura a las canciones. Aunque no tenía tantos solos como otros miembros, su participación era fundamental para equilibrar el sonido colectivo. También fue clave en la composición de algunas canciones del grupo, mostrando un gran compromiso creativo con la banda.
+    </p>
+     <img src="ONE5.webp" alt="the car" width="200">    
+  </div>
+  </div>
+  </div>
+  </article>
+</main>
+<button class="flecha" id="flechaArriba" onclick="scrollToTop()">⬆️</button>
+  <button class="flecha" id="flechaAbajo" onclick="scrollToBottom()">⬇️</button>
+
+<script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function scrollToBottom() {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+    <a href="Albumes.html"><button>Anterior</button></a>
+    <a href="index.html"><button>Ir a Inicio</button></a>
+    <a href="trayectoria.html"><button>Siguiente</button></a>
+    <br><br>
+<footer>
+  <p>© 2025 Mi sitio web</p>
+</footer>
+
+
+</body>
+</html>
